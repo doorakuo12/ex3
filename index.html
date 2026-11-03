@@ -1,124 +1,129 @@
 <!doctype html>
 <html>
-
-<head><!--設定頁面基本資訊+外部連結-->
-<meta charset="utf-8">
-<meta name="viewport" content=" width=device-width, initial-scale=1.0 "><!--meta放這邊-->
-<title>portfolio</title>
-<link href="css/ex3.css" rel="stylesheet" type="text/css"><!--連結資料夾放這邊-->
+<head>
+    <!--設定頁面基本資訊+外部連結-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Interaction</title>
+    <link href="css/ex3.css" rel="stylesheet" type="text/css">
 </head>
 
-<body><!--瀏覽器看得見的內容-->
-<!--header-->
-<header>
-    <div class="menu">
-        <!--logo-->
-        <div class="logo">
-            <a href="p2.html">
-            <img src="images/logo.png">
-            </a>
+<body>
+    <!-- header -->
+    <header>
+        <div class="menu container">
+            <!-- logo -->
+            <div class="logo">
+                <a href="p2.html">
+                    <img src="images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <!-- nav -->
+            <nav>
+                <a href="https://dorakuostudio.vercel.app/index.html">HOME</a>
+                <a href="https://930-eight.vercel.app/#">HOMEWORK</a>
+                <a href="https://youtu.be/68tKopokBLQ?si=5YVxnkWgxxdkfSmK">ANIMATION</a>
+                <a href="https://www.instagram.com/dooraku_o/">INSTAGRAM</a>
+            </nav>
         </div>
-        <!--nav-->
-        <nav>
-            <a href="p2.html">About</a>
-            <a href="p2.html">Product</a>
-            <a href="p2.html">Contact</a>
-        </nav>
+    </header>
+
+    <!-- hero -->
+    <div class="hero">
+        <img src="images/hero.mov" alt="hero">
+        <div class="hero-text">
+            <h1>阿兵 & 阿勾的故事</h1>
+            <p>綠色是阿兵，柴犬是阿勾！</p>
+        </div>
     </div>
-</header>
 
-<!--hero-->
-<div class="hero">
-    <img src="images/hero.png" alt="hero">
-    <h1>interaction</h1>
-</div>
-
-<!--marquee 跑馬燈、至少重新輪流兩次-->
-<div class="marquee">
-  <div class="marquee-track">
-    <div class="marquee-content">
-      WEB DESIGN ✦ HTML + CSS ✦ CREATIVE DESIGN ✦
-      WEB DESIGN ✦ HTML + CSS ✦ CREATIVE DESIGN ✦
+    <!-- marquee 跑馬燈 -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                DoraKUO studio 🐶 OUR STORY 🎾 DoraKUO studio 🐕 OUR STORY 🍡
+                DoraKUO studio 🐶 OUR STORY 🎾 DoraKUO studio 🐕 OUR STORY 🍡
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                DoraKUO studio 🐶 OUR STORY 🎾 DoraKUO studio 🐕 OUR STORY 🍡
+                DoraKUO studio 🐶 OUR STORY 🎾 DoraKUO studio 🐕 OUR STORY 🍡
+            </div>
+        </div>
     </div>
-    <div class="marquee-content" aria-hidden="true">
-      WEB DESIGN ✦ HTML + CSS ✦ CREATIVE DESIGN ✦
-      WEB DESIGN ✦ HTML + CSS ✦ CREATIVE DESIGN ✦
-    </div>
-  </div>
-</div>
 
-<!--card section-->
-<section>
-    <h1>— About Us —</h1>
-        <!--card-->
-        <div class="card">
-            <a href="#">
-            <img src="images/p1.png">
-            <h2>NAME</h2>
-            <p>more description</p>
-            </a>
+    <!-- card section -->
+    <section class="container section-padding">
+        <h1>★ 成員介紹 ★</h1>
+        <!-- 改用統一的 Grid 排版容器 -->
+        <div class="card-grid">
+            <div class="card">
+                <a href="https://www.instagram.com/dooraku_o/">
+                    <img src="images/p1.jpg" alt="p1">
+                    <h2>阿兵</h2>
+                    <p>綠色ㄉ、還不確定物種→</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.instagram.com/dora_.1211/">
+                    <img src="images/p2.jpg" alt="p2">
+                    <h2>狗主</h2>
+                    <p>人類(20)，愛畫圖搞怪</p>
+                </a>
+            </div> 
+
+            <div class="card">
+                <a href="https://www.instagram.com/duoduo.mame0830/">
+                    <img src="images/p3.PNG" alt="p3">
+                    <h2>阿勾</h2>
+                    <p>多多的化身，活潑→</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.instagram.com/duoduo.mame0830/">
+                    <img src="images/p4.jpg" alt="p4">
+                    <h2>豆柴多多</h2>
+                    <p>母犬（5），愛睡覺調皮</p>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <a href="#">
-            <img src="images/p2.png">
-            <h2>NAME</h2>
-            <p>more description</p>
-            </a>
-        </div> 
+    <!-- description section -->
+    <section class="container section-padding">
+        <h1>★ 佈告欄 ★</h1>
+        
+        <a href="#" class="article-link">
+            <article class="detail-article">
+                <div class="a_left">
+                    <img src="images/a1.jpg" alt="a1" />
+                </div>
+                <div class="a_right">
+                    <h2>超愛睡覺，睡就對了。</h2>
+                    <p>人類辛苦工作上班，我努力睡覺等家人回家，我很幸福，每天吃肉肉度日！颱風天是可以在家上廁所啦，但出門也蠻好玩的呀（跳）～</p>
+                </div>
+            </article>
+        </a>
+        
+        <a href="#" class="article-link">
+            <article class="detail-article">
+                 <div class="a_left">
+                    <img src="images/展露長柴.MP4" alt="a2" />
+                </div>
+                <div class="a_right">
+                    <h2>新作品上線嘍～展露長柴小誌</h2>
+                    <p>在公園看到臘腸狗，他們好長喔！今年萬聖節我也當當看很長的狗狗吧，阿兵一定也希望我能活很久很久，這樣才能一起去超多地方玩耍<3</p>
+                </div>
+            </article>
+        </a>
+    </section>
 
-        <div class="card">
-            <a href="#">
-            <img src="images/p3.png">
-            <h2>NAME</h2>
-            <p>more description</p>
-            </a>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            Follow me for more! Ig( 氣炸kuo @dooraku_o ) ✎☺︎&copy;All Right Reserved.
         </div>
-
-        <div class="card">
-            <a href="#">
-            <img src="images/p4.png">
-            <h2>NAME</h2>
-            <p>more description</p>
-            </a>
-        </div>
-
-</section>
-
-<!--description section-->
-<section>
-    <h1>— More details —</h1>
-    <!--article-->
-    <a href="#">
-    <article>
-        <div class="a_left"><!--放左-->
-            <img src="images/a1.png" />
-        </div>
-        <div class="a_right">
-            <h2>About basic layout</h2>
-            <p>本範例以網頁版面配置與互動設計為主軸，先透過 position 與 float 練習元素定位、左右排列與基本版面結構，再進一步加入 hover、transition 與簡易 CSS 動畫效果。透過實際操作，理解 HTML 元素與 CSS 樣式之間的關係，並觀察網頁如何從靜態版面逐步發展成具有視覺回饋與互動效果的頁面。</p>
-        </div>
-    </article>
-    </a>
-	
-    <a href="#">
-    <article>
-         <div class="a_left">
-            <img src="images/a2.png" />
-        </div>
-        <div class="a_right"><!--放右-->
-            <h2>About basic layout</h2>
-            <p>本範例以網頁版面配置與互動設計為主軸，先透過 position 與 float 練習元素定位、左右排列與基本版面結構，再進一步加入 hover、transition 與簡易 CSS 動畫效果。透過實際操作，理解 HTML 元素與 CSS 樣式之間的關係，並觀察網頁如何從靜態版面逐步發展成具有視覺回饋與互動效果的頁面。</p>
-        </div>
-    </article>
-    </a>
-
-</section>
-
-<!--footer-->
-<footer>
-&copy;dooraku_o All Right Reserved.
-</footer>
-
+    </footer>
 </body>
 </html>

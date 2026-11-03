@@ -1,277 +1,356 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
 
-body{
+/* ==================================
+   基本設定與共用容器 (全站統一規則)
+================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
-    color:rgba(87, 117, 144, 1);
-
-    font-family: "Roboto", sans-serif;
+    color: #fffff;
+    font-family: "Chelsea Market", system-ui;
+    /* 因為這頁的 header 預設是透明懸浮在 hero 上，所以不加 padding-top */
 }
 
-::selection{
+::selection {
     background: rgba(87, 117, 144, 1);
     color: rgba(255, 255, 255, 1);
 }
 
-a{
+a {
     text-decoration: none;
     color: rgba(87, 117, 144, 1);
     display: inline-block;
+    transition: color 0.3s;
 }
 
-a:hover{
-    color: rgba(87, 117, 144, 1);
+a:hover {
+    color: rgba(87, 117, 144, 0.7);
 }
 
-/*header*/
-header{
+/* ★ 統一的最大寬度容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.section-padding {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* ==================================
+   Header 導覽列
+================================== */
+header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: auto;
+    background: #67C0C7; /* 保留你設定的顏色 */
     z-index: 200000;
 }
 
-/*menu*/
-.menu{
-    width: 80%;
-    margin: 10px auto;
-    display:flex;
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-/*logo*/
-.logo{
-    flex:0 0 120px;
+.logo {
+    width: 100px;
+    flex-shrink: 0;
 }
 
-.logo img{
+.logo img {
     width: 100%;
-    margin: auto;
+    display: block;
     background: rgba(255, 255, 255, .5);
-	border-radius: 50%;
+    border-radius: 50%;
 }
 
-/*nav*/
-nav{
-    float: right;
-    flex:1;
+nav {
     text-align: right;
 }
 
-nav a{
-    padding: 50px;
+nav a {
+    padding: 10px 20px;
     font-weight: bold;
+    color:  #ffffff;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration: underline;
 }
 
-/*hero*/
-.hero{
+/* ==================================
+   Hero 滿版主視覺
+================================== */
+.hero {
     position: relative;   
     width: 100%;
     height: 90vh;
-    background:rgba(87, 117, 144, .2);
+    background: rgba(87, 117, 144, .2);
 }
 
-.hero img{
+.hero img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
-    object-position:bottom;
-}
-
-.hero h1{
-    position: absolute;
-    top:20%;
-	left:50%;
-	transform: translate(-50%, -50%);
-
-    font-size: 150px;
-    color: rgba(87, 117, 144, 1);
-}
-/*marquee可視範圍*/
-.marquee{
-    width: 100%;
-    overflow: hidden;
-    background: rgba(251, 139, 36, 1);
-    color: rgba(255, 255, 255, 1);
-    padding: 20px 0;
-}
-.marquee-track{/*輸送帶*/
-    display: flex;
-    width:max-content;
-    animation: marquee 20s linear infinite;
-}
-.marquee-content{
-    flex-shrink: 0;/*禁止因容器空間不足而縮小，維持遠本設定內所需寬度*/
-    padding-right: 0px;/*文字後面不要有空白*/
-    white-space: nowrap;/*讓文字維持同一行*/
-    font-size: max(1.5rem, 1vw);
-}
-
-@keyframes marquee{/*動畫名稱*/
-    from{
-        transform: translatex(0);
-    }
-    to{
-        transform: translatex(-50%);/*讓整個移動區域向左移動一半*/
-    }
-
-}
-
-/*section*/
-section{
-    display:flex;
-    flex-wrap: wrap;
-    gap:10px;
-
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
-}
-
-section h1{
-    color:rgba(87, 117, 144, 1);
-    text-align: center;
-    flex:0 0 100%;
-}
-
-/*card*/
-.card{
-    flex: 0 0 calc((100% - 10px *3)/4);
-	display:inline-block;
-	width:24.5%;
-	box-sizing:border-box;
-	padding:10px;
-	text-align:center;
-	cursor:pointer;
-}
-
-.card img{
-	width:80%;
-	border-radius:50%;
-	border:solid 1px rgba(87, 117, 144, 1);
-    
-	-ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari */
-    transform: rotate(0deg); /* Standard syntax */
-	
-	transition: transform 1.5s;
-	-webkit-transition: transform 1.5s;
-}
-
-.card:hover img{
-	-ms-transform: rotate(-20deg); /* IE 9 */
-    -webkit-transform: rotate(-20deg); /* Safari */
-    transform: rotate(-20deg); /* Standard syntax */
-}
-
-/*article*/
-article{
-        flex:0 0 100%;
-        margin:auto;
-    margin-bottom: 30px;
-    border:solid 4px rgba(87, 117, 144, 1);
-    border-radius: 50px;
-    box-sizing: border-box;
-    display:flex;
-}
-
-article:hover{
-    border:solid 8px rgba(87, 117, 144, 1);
-    background:rgba(87, 117, 144, .2);
-}
-
-.a_left{
-    flex:1;
-}
-
-.a_left img{
-	float:left;
-    width: 100%;
-    height:100%;
-	object-fit: cover;
+    object-fit: cover;
     object-position: bottom;
 }
 
-.a_right{
-        flex:1;
-        padding: 4%;
-        box-sizing:border-box;
-        color:rgba(87, 117, 144, 1);
-        text-align:left;
-    line-height: 2rem;
+/* ★ 讓包裹文字的容器絕對置中 */
+.hero-text {
+    position: absolute;
+    top: 40%; /* 微調高度，讓兩行字整體居中 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%; /* 避免手機版文字貼齊邊緣 */
 }
 
-.a_right h2{
-    font-size: 2.5rem;
+/* 標題設定 */
+.hero h1 {
+    font-size: clamp(60px, 8vw, 150px);
+    color:  #ffffff;
+    margin: 0;
 }
 
-/*footer*/
-footer{
-    clear: both;
+/* ★ 新增的段落設定 */
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* 流式字體，隨螢幕自動縮放 */
+    color:  #ffffff;
+    margin: 10px 0 0 0; /* 與上方標題保持一點距離 */
+    font-weight: bold;
+    letter-spacing: 2px; /* 增加字距讓排版更透氣 */
+}
+
+/* ==================================
+   Marquee 跑馬燈
+================================== */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #8DD85D;
+    color: rgba(255, 255, 255, 1);
+    padding: 20px 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    padding-right: 20px; /* 加入一點間距避免字黏在一起 */
+    white-space: nowrap;
+    font-size: max(1.5rem, 1vw);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ==================================
+   Section 標題
+================================== */
+section h1 {
+    color: #fffff;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* ==================================
+   Card Section (改用全站統一的 Grid)
+================================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    text-align: center;
+    cursor: pointer;
+}
+
+.card img {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 2px rgba(87, 117, 144, 1);
+    
+    transition: transform 1.5s ease;
+    -webkit-transition: transform 1.5s ease;
+}
+
+.card:hover img {
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+
+.card h2 {
+    margin: 15px 0 5px;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* ==================================
+   Article 區塊 (左右佈局)
+================================== */
+.article-link {
+    display: block; /* 確保 a 標籤完整包覆 block 元素 */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.detail-article {
+    display: flex;
+    width: 100%;
+    border: solid 4px rgba(87, 117, 144, 1);
+    border-radius: 30px; /* 原 50px 在手機上容易吃掉內容，稍微修飾 */
+    overflow: hidden;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.detail-article:hover {
+    border-width: 6px;
+    background: rgba(87, 117, 144, .1);
+}
+
+.a_left {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.a_left img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.a_right {
+    width: 50%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(87, 117, 144, 1);
+    line-height: 1.8rem;
+}
+
+.a_right h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.a_right p {
+    margin: 0;
+}
+
+/* ==================================
+   Footer
+================================== */
+footer {
     width: 100%;
     padding: 50px 0px;
     text-align: center;
+    color: rgba(87, 117, 144, 1);
 }
 
-/*for tablets*/
-@media only screen and (max-width: 1200px) {
+/* ==================================
+   游標設定
+================================== */
+html, body, body * {
+    cursor: url("../images/cursor.png") 4 4, auto;
 }
 
-/*for mobile*/
-@media only screen and (max-width: 768px) {
-    body{
-        font-size: 1.3rem;}
+a:active, button:active {
+    cursor: url("../images/cursor-click.png") 4 4, auto;
+}
 
+/* ==================================
+   全局 RWD 響應式設定
+================================== */
+@media (max-width: 900px) {
+    /* 卡片區：平板變兩欄 */
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-    /*menu*/
-    .menu{
-        margin:20px auto;
+@media (max-width: 768px) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    /* 導覽列：改為上下置中排列 */
+    .menu {
         flex-direction: column;
-}
-    /*logo*/
-    .logo{
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.9); /* 手機版加上背景，避免字與背景重疊看不清 */
+        border-radius: 0 0 20px 20px;
+    }
+
+    nav {
         text-align: center;
-}
-    .logo img{
-        width: 30%;
-        margin: auto;
-}
-/*nav*/
-    nav{
-        text-align: center;
-}
-    nav a{
-        padding: 10px;
-}
-/*hero*/
-    .hero{
+    }
+    
+    nav a {
+        padding: 10px 15px;
+    }
+
+    .hero {
         height: 60vh;
-}
-    .hero h1{
-        top:40%;
-        font-size: 80px;
-}
-/*card*/
-    .card{
-        flex: 0 0 calc((100% - 10px *1)/2);
-}
-/*article*/
-article{
+    }
+
+    /* 文章列表：左圖右文改為上下排列 */
+    .detail-article {
         flex-direction: column;
-}
-section > a:nth-of-type(2n) article{
-    flex-direction: column;
-}
-.a_right{
-    padding: 6%;
-}
-.a_right h2{
-    font-size: 2rem;
+    }
+    
+    .a_left {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .a_right {
+        width: 100%;
+        padding: 8%;
+    }
+
+    .a_right h2 {
+        font-size: 1.5rem;
+    }
 }
 
+@media (max-width: 600px) {
+    /* 卡片區：手機變單欄 */
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card img {
+        width: 60%;
+    }
 }
