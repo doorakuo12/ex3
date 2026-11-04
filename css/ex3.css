@@ -337,14 +337,20 @@ a:active, button:active {
 @media (max-width: 768px) {
     body {
         font-size: 1.1rem;
+        padding-top: 110px;
     }
 
     /* 導覽列：改為上下置中排列 */
     .menu {
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
         background: #67C0C7; /* 手機版加上背景，避免字與背景重疊看不清 */
         border-radius: 0 0 20px 20px;
+        padding: 5px 10px; /* 縮減 Header 區塊整體的上下留白 */
+    }
+
+    .logo {
+        width: 70px;       /* 限制手機版 Logo 的最大寬度 */
     }
 
     nav {
@@ -352,7 +358,9 @@ a:active, button:active {
     }
     
     nav a {
-        padding: 10px 15px;
+        display: inline-block;
+        padding: 5px 8px;
+        font-size: 1rem;
     }
 
     .hero {
